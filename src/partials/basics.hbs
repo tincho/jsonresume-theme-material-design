@@ -81,7 +81,7 @@
                     <a href="{{url}}" target="_blank">
                     {{/if}}
                     <i class="mdc-chip__icon mdc-chip__icon--fontawesome mdc-chip__icon--leading">
-                        {{fontawesome "fab" network}}
+                        {{fontawesome "fab" (toLowerCase network)}}
                     </i>
                     <span role="gridcell">
                                 <span role="button" tabindex="0" class="mdc-chip__text">{{username}}</span>
@@ -119,7 +119,7 @@
                     {{/if}}
                     <button class="mdc-icon-button mdc-card__action mdc-card__action--icon--unbounded"
                             title="{{network}}" data-mdc-ripple-is-unbounded="true">
-                        {{fontawesome "fab" network}}
+                        {{fontawesome "fab" (toLowerCase network)}}
                     </button>
                     {{#if this.url}}
                     </a>

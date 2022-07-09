@@ -61,7 +61,12 @@ function registerPartials(partialsPath) {
     });
 }
 
+function toLowerCaseHelper (value) {
+    return (value || '').toLowerCase();
+}
+
 function registerHelpers() {
+    Handlebars.registerHelper("toLowerCase", toLowerCaseHelper);
     Handlebars.registerHelper("fontawesome", FontawesomeHelper);
     Handlebars.registerHelper("locationAsString", LocationHelper);
     Handlebars.registerHelper("preloadImage", PreloadImageHelper);
