@@ -13,7 +13,7 @@ const webpackConfig = require('./webpack.config');
 const requireUncached = require('require-uncached');
 const helpers = require('handlebars-helpers');
 
-async function render(resume) {
+function render(resume) {
     fixResumeSchemaChanges(resume)
     return bundleResumeHtml(
         renderTemplate(resume)
@@ -75,6 +75,9 @@ function registerHelpers() {
     Handlebars.registerHelper("levelDefault", levelDefaultHelper);
     Handlebars.registerHelper("appTitle", appTitleHelper);
     Handlebars.registerHelper("formatDate", formatDateHelper);
+    Handlebars.registerHelper("newlines2br", function(value) {
+        return new Handlebars.SafeString(Handlebars.escapeExpression(value).replace(/\n/g, "<br>"))
+    });
     helpers({
         handlebars: Handlebars
     });
