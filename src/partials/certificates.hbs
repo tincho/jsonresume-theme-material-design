@@ -16,16 +16,18 @@
                             <div class="mdc-card__header mdc-card__header--padded {{#if
                                     url}}mdc-card__primary-action{{/if}}">
                                 <div class="mdc-card__header-texts">
-                                    {{#if issuer}}<span class="mdc-typography--headline6">{{name}}</span>{{/if}}
+                                    {{#if name}}<span class="mdc-typography--headline6">{{name}}</span>{{/if}}
+                                    {{#if ./date}}
+                                    <span class="mdc-typography mdc-typography--subtitle2">{{formatDate ./date}}</span>
+                                    {{/if}}
                                 </div>
                             </div>
                             {{#if url}}</a>{{/if}}
-                            <div class="mdc-card__content mdc-card__content--padded mdc-typography--body1">
-                                {{formatDate ./date}}
-                            </div>
+                            {{#if issuer}}
                             <div class="mdc-card__content mdc-card__content--padded mdc-typography--body1">
                                 Issued by: {{issuer}}
                             </div>
+                            {{/if}}
                         </div>
                     </div>
                 {{/each}}
