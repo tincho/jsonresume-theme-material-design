@@ -1,0 +1,35 @@
+{{#if resume.certificates.length}}
+    <section id="certificates" {{#if resume.meta.print.hiddenSections}}class="{{#inArray resume.meta.print.hiddenSections "certificates"}}just-screen{{/inArray}}"{{/if}}>
+        <div class="mdc-layout-grid title">
+            <div class="mdc-layout-grid__inner">
+                <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12">
+                    <span class="mdc-typography--headline5">Certificates</span>
+                </div>
+            </div>
+        </div>
+        <div class="mdc-layout-grid">
+            <div class="mdc-layout-grid__inner">
+                {{#each resume.certificates}}
+                    <div class="mdc-layout-grid__cell {{#if printHidden}}just-screen{{/if}}">
+                        <div class="mdc-card certificates-card mdc-card--outlined">
+                            {{#if url}}<a href="{{url}}">{{/if}}
+                            <div class="mdc-card__header mdc-card__header--padded {{#if
+                                    url}}mdc-card__primary-action{{/if}}">
+                                <div class="mdc-card__header-texts">
+                                    {{#if issuer}}<span class="mdc-typography--headline6">{{name}}</span>{{/if}}
+                                </div>
+                            </div>
+                            {{#if url}}</a>{{/if}}
+                            <div class="mdc-card__content mdc-card__content--padded mdc-typography--body1">
+                                {{formatDate ./date}}
+                            </div>
+                            <div class="mdc-card__content mdc-card__content--padded mdc-typography--body1">
+                                Issued by: {{issuer}}
+                            </div>
+                        </div>
+                    </div>
+                {{/each}}
+            </div>
+        </div>
+    </section>
+{{/if}}

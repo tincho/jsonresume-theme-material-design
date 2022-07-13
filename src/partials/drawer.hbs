@@ -31,6 +31,14 @@
                     <span class="mdc-list-item__text">Education</span>
                 </a>
             {{/if}}
+            {{#if resume.certificates.length}}
+                <a class="mdc-list-item" href="#certificates">
+                    <i class="mdc-list-item__graphic" aria-hidden="true">
+                        {{fontawesome "fa" "Certificate"}}
+                    </i>
+                    <span class="mdc-list-item__text">Certificates</span>
+                </a>
+            {{/if}}
             {{#if resume.awards.length}}
                 <a class="mdc-list-item" href="#awards">
                     <i class="mdc-list-item__graphic" aria-hidden="true">
