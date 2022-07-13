@@ -28,9 +28,9 @@
                                 {{/if}}
                                 <span>
                                     {{#if startDate}}
-                                        <span class="mdc-typography mdc-typography--subtitle2">{{startDate}}</span>{{/if}}
+                                        <span class="mdc-typography mdc-typography--subtitle2">{{formatDate startDate}}</span>{{/if}}
                                     {{#if endDate}}
-                                        <span class="mdc-typography mdc-typography--subtitle2"> - {{endDate}}</span>
+                                        <span class="mdc-typography mdc-typography--subtitle2"> - {{formatDate endDate}}</span>
                                     {{else}}
                                         {{#if startDate}}
                                             <span class="mdc-typography mdc-typography--subtitle2"> - Present</span>{{/if}}

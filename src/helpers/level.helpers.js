@@ -5,7 +5,7 @@ const LEVEL_MAP = {
     "beginner": 1,
     "early": 2,
     "competent": 3,
-    "fluent": 3,
+    "fluent": 4,
     "advanced": 4,
     "expert": 5,
     "native": 5,
