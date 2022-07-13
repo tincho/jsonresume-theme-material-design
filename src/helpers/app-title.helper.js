@@ -2,10 +2,23 @@
  * @return {string}
  */
 module.exports = function AppTitleHelper(resume) {
-    if(resume && resume.basics && resume.basics.name && resume.basics.name.length) {
-       const name = resume.basics.name;
-       const firstName = name.split(' ')[0];
-       return `${firstName}'s resume`;
+
+    const fallback = {
+        basics: {
+            name: "",
+            label: ""
+        }
     }
-    return "Resume";
+    const { basics: { name, label } = fallback.basics } = resume
+
+    let title = ''
+
+    if (name.length)
+        title += `${name} - `
+    if (label.length)
+        title += `${label} - `
+
+    title += 'Resume'
+
+    return title
 };
