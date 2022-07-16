@@ -12,7 +12,7 @@
                 {{#each resume.certificates}}
                     <div class="mdc-layout-grid__cell {{#if printHidden}}just-screen{{/if}}">
                         <div class="mdc-card certificates-card mdc-card--outlined">
-                            {{#if url}}<a href="{{url}}">{{/if}}
+                            {{#if url}}<a href="{{url}}" rel="external" target="_blank">{{/if}}
                             <div class="mdc-card__header mdc-card__header--padded {{#if
                                     url}}mdc-card__primary-action{{/if}}">
                                 <div class="mdc-card__header-texts">
